@@ -18,7 +18,7 @@ def test_fields_validation(page,login_details):
 
     assert error is not None, "Error message is not displayed."
 
-def test_successful_login(page,login_details):
+def test_successfullogin_submitbutton_logout(page,login_details):
     login_page = Zenlogin(page)
     dashboard_page = Dashboard(page)
 
@@ -41,5 +41,6 @@ def test_unsuccessful_login(page,login_details):
     error = login_page.get_error_message()
 
     assert error is not None, "Error message is not displayed"
+
 
     assert "Invalid" or "Incorrect" in error
